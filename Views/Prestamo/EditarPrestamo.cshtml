@@ -1,0 +1,67 @@
+﻿@model Biblioteca_Web.Models.Prestamo
+@{
+    ViewBag.Title = "EditarPrestamo";
+}
+
+<h2>Editar Prestamo</h2>
+
+@using (Html.BeginForm("EditarPrestamo", "Prestamo", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+<div>
+    <div>
+        <div>
+            @Html.LabelFor(model => model.IdPrestamo)
+        </div>
+        |
+        <div>
+            @Html.EditorFor(model => model.IdPrestamo)
+            @Html.ValidationMessageFor(model => model.IdPrestamo)
+        </div>
+    </div>
+    <div>
+        <div>
+            @Html.LabelFor(model => model.Libro.Titulo)
+        </div>
+        |
+        <div>
+            @Html.EditorFor(model => model.Libro.Titulo)
+            @Html.ValidationMessageFor(model => model.Libro.Titulo)
+        </div>
+    </div>
+    <div>
+        <div>
+            @Html.LabelFor(model => model.Usuario.Nombre)
+        </div>
+        |
+        <div>
+            @Html.EditorFor(model => model.Usuario.Nombre)
+            @Html.ValidationMessageFor(model => model.Usuario.Nombre)
+        </div>
+    </div>
+    <div>
+        <div>
+            @Html.LabelFor(model => model.FecPrestamo)
+        </div>
+        |
+        <div>
+            @Html.EditorFor(model => model.FecPrestamo)
+            @Html.ValidationMessageFor(model => model.FecPrestamo)
+        </div>
+    </div>
+    <div>
+        <div>
+            @Html.LabelFor(model => model.FecDevolucion)
+        </div>
+        |
+        <div>
+            @Html.EditorFor(model => model.FecDevolucion)
+            @Html.ValidationMessageFor(model => model.FecDevolucion)
+        </div>
+    </div>
+    <div>
+        <input type="submit"  value="Actualizar Prestamo"  class="btn btn-success"/>
+    </div>
+</div>
+}
+
