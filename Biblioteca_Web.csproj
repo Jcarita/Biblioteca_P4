@@ -205,6 +205,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Views\Prestamo\EditarPrestamo.cshtml" />
+    <Content Include="Views\Prestamo\CreatePrestamo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

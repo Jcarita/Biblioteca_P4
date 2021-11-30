@@ -30,6 +30,29 @@ namespace Biblioteca_Web.Controllers
         {
             return View(contexto.Prestamoes.ToList());
         }
+        public ActionResult CreatePrestamo()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreatePrestamo(Prestamo createPrestamo)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    contexto.Prestamoes.Add(createPrestamo);
+                    contexto.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(createPrestamo);
+            }
+            catch
+            {
+                return View();
+            }
+            return View();
+        }
         public ActionResult EditarPrestamo(int? id)
         {
             if (id == null)

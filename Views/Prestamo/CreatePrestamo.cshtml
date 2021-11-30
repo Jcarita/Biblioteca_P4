@@ -1,0 +1,67 @@
+﻿@model Biblioteca_Web.Models.Prestamo
+    @using Biblioteca_Web.Models
+@{
+    ViewBag.Title = "CreatePrestamo";
+}
+
+<h2>CreatePrestamo</h2>
+
+h2>Editar Prestamo</h2>
+
+@using (Html.BeginForm("CreatePrestamo", "Prestamo", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+    <div>
+        <div>
+            <div>
+                @Html.LabelFor(model => model.IdPrestamo)
+            </div>
+            |
+            <div>
+                @Html.EditorFor(model => model.IdPrestamo)
+                @Html.ValidationMessageFor(model => model.IdPrestamo)
+            </div>
+        </div>
+        <div>
+            <div>
+                @Html.LabelFor(model => model.Libro)
+            </div>
+            |
+            <div>
+                @Html.DropDownListFor(model => model.Libro, new SelectList(Enum.GetValues(typeof(Libro))),"Seleccionar Libro")
+            </div>
+        </div>
+        <div>
+            <div>
+                @Html.LabelFor(model => model.Usuario)
+            </div>
+            |
+            <div>
+                @Html.DropDownListFor(model => model.Usuario, new SelectList(Enum.GetValues(typeof(Usuario))), "Selecionar Usuario")
+            </div>
+        </div>
+        <div>
+            <div>
+                @Html.LabelFor(model => model.FecPrestamo)
+            </div>
+            |
+            <div>
+                @Html.EditorFor(model => model.FecPrestamo)
+                @Html.ValidationMessageFor(model => model.FecPrestamo)
+            </div>
+        </div>
+        <div>
+            <div>
+                @Html.LabelFor(model => model.FecDevolucion)
+            </div>
+            |
+            <div>
+                @Html.EditorFor(model => model.FecDevolucion)
+                @Html.ValidationMessageFor(model => model.FecDevolucion)
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="Crear" class="btn btn-success" />
+        </div>
+    </div>
+}
